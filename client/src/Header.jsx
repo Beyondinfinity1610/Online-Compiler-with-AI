@@ -1,6 +1,6 @@
 import React from 'react'
 
-function LanguageSelector({ onLanguageChange }) {
+function Header({ onLanguageChange, runCode }) {
   const lang = ["javascript", "python", "c", "cpp"];
 
   return (
@@ -13,10 +13,10 @@ function LanguageSelector({ onLanguageChange }) {
         ))}
       </select>
 
-      <button className='bg-white p-1 rounded-lg m-2 ml-[35px]'>Run Code</button>
+      <button className='bg-white p-1 rounded-lg m-2 ml-[35px]' onClick={runCode}>Run Code</button>
       <button className='bg-white p-1 rounded-lg m-2'>AI Hint</button>
     </div>
   )
 }
 
-export default LanguageSelector
+export default Header
