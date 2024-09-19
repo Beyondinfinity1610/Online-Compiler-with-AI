@@ -11,11 +11,11 @@ Code Buddy is designed for beginner coders who might feel a bit lost in the vast
 - **MERN STACK**
 
 - **APIs Used**
- - **Monaco Editor API**
-   
- - **Piston API** 
- 
- - **Google Gemini AI API**
+    - **Monaco Editor API**
+      
+    - **Piston API** 
+    
+    - **Google Gemini AI API**
 
 ## 🛠️ Improvements Needed
 
