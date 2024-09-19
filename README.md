@@ -3,6 +3,7 @@
 Welcome to **Code Buddy**, your friendly neighborhood online compiler that doesn’t just execute your code but also thinks alongside you! Forget those boring, robotic assistants, we’re here to make coding fun and engaging.
 
 ![{EDCA052E-F70B-44C2-9395-53A225F5E72D}](https://github.com/user-attachments/assets/cfe41d6a-4581-46d5-a028-127aa36e428d)
+
 ![{913B06AF-4315-45C7-8564-1A3BDB39CAED}](https://github.com/user-attachments/assets/3d9624b8-e5b2-4dd7-b518-7b36ad2a0215)
 
 
