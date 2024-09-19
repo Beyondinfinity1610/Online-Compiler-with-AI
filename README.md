@@ -2,6 +2,8 @@
 
 Welcome to **Code Buddy**, your friendly neighborhood online compiler that doesn’t just execute your code but also thinks alongside you! Forget those boring, robotic assistants, we’re here to make coding fun and engaging.
 
+![{EDCA052E-F70B-44C2-9395-53A225F5E72D}](https://github.com/user-attachments/assets/cfe41d6a-4581-46d5-a028-127aa36e428d)
+
 ## 💡 What’s the Idea?
 
 Code Buddy is designed for beginner coders who might feel a bit lost in the vast sea of syntax and logic. Our AI buddy helps you identify your mistakes and nudges you toward the right path without just handing over the answers on a silver platter. Think of us as your coding Yoda minus the green skin and Jedi powers.
