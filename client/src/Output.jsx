@@ -1,9 +1,9 @@
 import React from 'react'
 
-function output() {
+function output({ output }) {
   return (
     <div className='h-[50vh] w-full bg-gray-700'>
-      
+      {output}
     </div>
   )
 }

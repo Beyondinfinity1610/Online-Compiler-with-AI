@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Editor from '@monaco-editor/react';
 
-function monacoEditor({ language, theme = "vs-dark", codeChange}) {
-    const editorRef = useRef(null);
+function monacoEditor({ language, theme = "vs-dark", editorRef}) {
     const starterCode = {
         javascript: `// JavaScript Starter Code
       console.log("Hello, World!");`,
       
-        python: `# Python Starter Code
-      print("Hello, World!")`,
+        python: `print("Hello, World!") # Python Starter Code`,
       
         c: `// C Starter Code
       #include <stdio.h>
@@ -27,6 +25,9 @@ function monacoEditor({ language, theme = "vs-dark", codeChange}) {
       }`
     };
 
+    useEffect(() => {
+      language === "python3" ? "python" : language
+    }, [language])
 
     function onMount(editor){
         editorRef.current = editor;
