@@ -8,6 +8,9 @@ Code Buddy is designed for beginner coders who might feel a bit lost in the vast
 
 ## 💪 Built Using
 
+- **MERN STACK**
+
+  **APIs Used**
 - **Monaco Editor API**
   
 - **Piston API** 
