@@ -2,9 +2,14 @@ import React from 'react'
 
 const AIbox = ({ AiHint }) => {
   return (
-    <div className='h-[50vh] bg-gray-500'>
-      {AiHint ? AiHint : "Run the code to check if there are any errors"}
+    <div className='text-[#ECDFCC] font-robotoMono'>
+      <div className='p-2 bg-black font-bold'>AI Hint</div>
+      <div className='h-[40vh] bg-[#161e18] overflow-auto p-3 pt-1 text-[#ECDFCC]'>
+        {AiHint ? AiHint : 'Click "Run Code" or "AI Hint" check if there are any errors'}
+      </div>
     </div>
+
+    
   )
 }
 

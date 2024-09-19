@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* For vertical and horizontal scrollbars */
+::-webkit-scrollbar {
+    width: 10px; /* width for vertical scrollbar */
+    height: 10px; /* height for horizontal scrollbar */
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    background: #888;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #504f4f;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1f1f1f;
+}

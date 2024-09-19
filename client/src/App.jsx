@@ -20,7 +20,7 @@ function App() {
 
   async function handleRunCode(){
     try {
-
+      setOutput(["Executing Please Wait..."]);
       const response = await axios.post('http://localhost:3000/run', {
         code: editorRef.current.getValue(),
         language: language
@@ -30,15 +30,13 @@ function App() {
 
     } catch (error) {
       console.log(error);
+      setOutput(["Error in the Server"]);
     }
   }
 
-  useEffect(() => {
-    console.log(output);
-  }, [output])
-
   async function handleAICall(error){
     try {
+      setAiHint(["Analysing Please Wait..."]);
       const response = await axios.post('http://localhost:3000/ai', {
         code: editorRef.current.getValue(),
         error: error,
@@ -49,6 +47,7 @@ function App() {
 
     } catch (error) {
       console.log(error);
+      setAiHint("Error in the server");
     }
   }
 
@@ -56,9 +55,9 @@ function App() {
     <div className="h-screen flex flex-col">
       <Header language={language} onLanguageChange={handleLanguage} runCode={handleRunCode} AICall = {handleAICall} className="p-2" />
       <div className="flex flex-1 overflow-hidden">
-        <MonacoEditor language={language} editorRef={editorRef} className="w-1/2 h-full" />
+        <MonacoEditor language={language} editorRef={editorRef} className="w-full h-full" />
         
-        <div className="w-1/2 flex flex-col">
+        <div className="w-full flex flex-col">
           <Output output={output}/>
           <AIbox AiHint={AiHint}/>
         </div>

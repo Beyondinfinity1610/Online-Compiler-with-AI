@@ -5,7 +5,6 @@ import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import languageVersions from "./languageVersion.js";
 
-
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -44,28 +43,6 @@ app.post('/ai', async (req, res) => {
     }
 });
 
-// app.post('/run', async (req, res) => {
-//     const { code, language } = req.body;
-    
-//     const apiUrl = 'https://api.jdoodle.com/v1/execute';
-//     const config = {
-//         clientId: process.env.CLIENT_ID,
-//         clientSecret: process.env.CLIENT_SECRET,
-//         script: code,
-//         language: language, 
-//     };
-    
-//     try {
-//         const response = await axios.post(apiUrl, config);
-//         res.json(response.data);
-//     } catch (error) {
-//         console.error('Error executing code:', error);
-//         res.status(500).send('Error executing code');
-//     }
-    
-//     console.log("code: ", code, "language: " , language);
-// })
-
 app.post('/run', async (req, res) => {
     const { code, language } = req.body;
     
@@ -93,8 +70,6 @@ app.post('/run', async (req, res) => {
         console.error('Error executing code:', error);
         res.status(500).json({ error: 'Error executing code', details: error.message });
     }
-    
-    console.log("code: ", code, "language: " , language);
 })
 
 app.listen(PORT, () => {
