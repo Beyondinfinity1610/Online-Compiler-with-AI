@@ -10,8 +10,8 @@ function App() {
 
   const [language, setLanguage] = useState("javascript");
   
-  const [output, setOutput] = useState("");
-  const [AiHint, setAiHint] = useState("");
+  const [output, setOutput] = useState(null);
+  const [AiHint, setAiHint] = useState(null);
 
 
   function handleLanguage(language) {
@@ -26,11 +26,8 @@ function App() {
         language: language
       })
   
-      if (response.error){
-        setOutput(response.data.error);      
-      } else {
-        setOutput(response.data.run.output);
-      }
+      setOutput(response.data.run.output.split("\n"));
+
     } catch (error) {
       console.log(error);
     }
@@ -40,8 +37,19 @@ function App() {
     console.log(output);
   }, [output])
 
-  async function handleAICall(){
+  async function handleAICall(error){
+    try {
+      const response = await axios.post('http://localhost:3000/ai', {
+        code: editorRef.current.getValue(),
+        error: error,
+      })
 
+      console.log(response.data.hint);
+      setAiHint(response.data.hint);
+
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (

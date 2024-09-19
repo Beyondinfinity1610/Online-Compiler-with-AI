@@ -13,7 +13,7 @@ function Header({ onLanguageChange, runCode, AICall }) {
         ))}
       </select>
 
-      <button className='bg-white p-1 rounded-lg m-2 ml-[35px]' onClick={runCode}>Run Code</button>
+      <button className='bg-white p-1 rounded-lg m-2 ml-[35px]' onClick={() => {runCode(); AICall();}}>Run Code</button>
       <button className='bg-white p-1 rounded-lg m-2' onClick={AICall}>AI Hint</button>
     </div>
   )

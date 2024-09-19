@@ -19,17 +19,17 @@ app.use(express.json());
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-async function giveHints(code) {
-    const prompt = `check this code ${code} and if there are any errors give me only the hint where the error is and guide me to think in the right way to debug it without directly giving me the answer.`;
+async function giveHints(code, error) {
+    const prompt = `check this code ${code} and it shows these errors ${error} give me only the hint where the error is and guide me to think in the right way to debug it without directly giving me the answer. it there are no errors then just say "There are no errors in this code." and nothing else how many times i ask.`;
     const result = await model.generateContent(prompt);
     return result.response.text();
 }
 
 app.post('/ai', async (req, res) => {
     try {
-        const code = req.body.code;
-
+        const { code, error } = req.body;
         console.log(code);
+        console.log(error);
 
         if (!code){
             return res.status(400).json({ error: "No code provided" })
@@ -87,6 +87,7 @@ app.post('/run', async (req, res) => {
                 'Content-Type': 'application/json'
             }
         });
+
         res.json(response.data);
     } catch (error) {
         console.error('Error executing code:', error);
