@@ -18,7 +18,7 @@ Code Buddy is designed for beginner coders who might feel a bit lost in the vast
 
 ⚠️ **Still under Construction**
 
-- **AI Response Parsing**
+- **AI Response Parsing**: It's kinda trash right now 🥲, soon will fix it.
 
 - **Color-Coded Output**: Errors, warnings, and success messages will soon be displayed in dazzling colors, making it easier to spot what went wrong (or right!).
 
