@@ -19,7 +19,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 async function giveHints(code, error) {
-    const prompt = `check this code ${code} and it shows these errors ${error} give me only the hint where the error is and guide me to think in the right way to debug it without directly giving me the answer. it there are no errors then just say "There are no errors in this code." and nothing else how many times i ask.`;
+    const prompt = `check this code ${code} and it shows these errors ${error} give me only the hint where the error is and guide me to think in the right way to debug it without directly giving me the answer. if there are no errors then just say "Awesome there are no errors in this code ✨" and nothing else how many times i ask.`;
     const result = await model.generateContent(prompt);
     return result.response.text();
 }
@@ -44,13 +44,14 @@ app.post('/ai', async (req, res) => {
 });
 
 app.post('/run', async (req, res) => {
-    const { code, language } = req.body;
+    const { code, stdin, language } = req.body;
     
     const apiUrl = 'https://emkc.org/api/v2/piston/execute';
 
     const config = {
         language: language,
         version: languageVersions[language],
+        stdin: stdin,
         files: [
             {
                 content: code,

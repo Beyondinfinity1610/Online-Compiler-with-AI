@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Editor from '@monaco-editor/react';
 import starterCode from './assets/starterCode';
 
-function monacoEditor({ language, theme = "vs-dark", editorRef}) {
+function monacoEditor({ language, theme = "vs-light", editorRef}) {
     function onMount(editor){
         editorRef.current = editor;
         editor.focus();
