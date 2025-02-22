@@ -33,6 +33,11 @@ function App() {
   const [isLoadModalOpen, setIsLoadModalOpen] = useState(false);
   const [savedCodes, setSavedCodes] = useState([]);
 
+  useEffect(() => {
+    setOutput("")
+  }, [])
+  
+
   const [outputButtonStyle, setOutputButtonStyle] = useState(
     "p-1 border-2 rounded-md rounded-b-none text-white pr-2 pl-2 bg-[#C4DAD2] text-black"
   );
