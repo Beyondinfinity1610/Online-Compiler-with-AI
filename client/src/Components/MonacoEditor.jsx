@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Editor from '@monaco-editor/react';
-import starterCode from './assets/starterCode';
+import starterCode from '../assets/starterCode';
 
 function monacoEditor({ language, theme = "vs-light", editorRef}) {
     function onMount(editor){
@@ -21,7 +21,6 @@ function monacoEditor({ language, theme = "vs-light", editorRef}) {
             defaultValue={starterCode[language]}
             onMount={onMount}
             theme={theme}
-            onChange={(value) => codeChange(value)}
         />
     )
 }
