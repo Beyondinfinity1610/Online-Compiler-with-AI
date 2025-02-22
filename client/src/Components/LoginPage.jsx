@@ -32,7 +32,7 @@ export function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#161e18]">
+    <div className="min-h-screen flex items-center justify-center bg-black">
       <div className="bg-[#161e18] p-8 rounded-lg shadow-md w-96 border border-[#ECDFCC] text-[#ECDFCC]">
         <h2 className="text-2xl font-bold mb-6 text-center text-[#ECDFCC]">
           Code Editor Login
