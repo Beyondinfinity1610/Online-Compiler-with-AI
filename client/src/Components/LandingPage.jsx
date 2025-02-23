@@ -1,27 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useTransform, useScroll, AnimatePresence,useSpring } from 'framer-motion';
+import { motion, useTransform, useScroll, AnimatePresence, useSpring } from 'framer-motion';
 import { Code2, Terminal, Cpu, Box } from 'lucide-react';
-
 import { useNavigate } from 'react-router-dom';
+import manikandanImage from '../assets/WhatsApp Image 2025-02-23 at 22.45.15_d81fd2ed.jpg';
+import ramakrishnanImage from '../assets/WhatsApp Image 2025-02-23 at 22.44.15_dadafe81.jpg';
+import thejeshwaarImage from '../assets/OIP.jpeg';
 
-
-// Animation variants
 const pageTransitions = {
   initial: { opacity: 0, scale: 0.95 },
   animate: { opacity: 1, scale: 0.95 },
   exit: { opacity: 0, scale: 0.95 }
 };
 
-// Terminal Animation Component
-
-
-
 const teamMembers = [
-  { name: "John Doe", role: "Lead Developer" },
-  { name: "Jane Smith", role: "UI Designer" },
-  { name: "Mike Johnson", role: "Backend Engineer" },
-  { name: "Sarah Wilson", role: "Product Manager" }
+  { 
+    name: "Manikandan S", 
+    role: "Database & Security",
+    url: manikandanImage 
+  },
+  { 
+    name: "Ramakrishnan I", 
+    role: "Backend & Frontend Developer",
+    url: ramakrishnanImage
+  },
+  { 
+    name: "Thejeshwaar S", 
+    role: "Frontend & Animations Developer", 
+    url: thejeshwaarImage
+  }
 ];
+
 
 const ModernDock = () => (
   <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-3/5 flex flex-col items-center">
@@ -82,7 +90,7 @@ const SmartCompilation = ({ onBack }) => (
         transition={{ delay: 0.2 }}
         className="text-3xl font-bold text-white mb-6"
       >
-        Smart Compilation
+        AI-Powered Compilation
       </motion.h2>
       <motion.div 
         className="flex-1 space-y-6"
@@ -91,29 +99,30 @@ const SmartCompilation = ({ onBack }) => (
         transition={{ delay: 0.3 }}
       >
         <div className="bg-gray-800 p-6 rounded-lg h-full">
-          <h3 className="text-xl text-blue-400 mb-4">Real-time Analysis</h3>
+          <h3 className="text-xl text-blue-400 mb-4">Intelligent Code Analysis</h3>
           <div className="space-y-4">
             <div className="bg-gray-900 p-4 rounded border border-gray-700">
-              <code className="text-green-400">analyzing main.cpp...</code>
-              <div className="mt-2 text-yellow-400">⚠ Potential memory leak detected in line 42</div>
+              <code className="text-green-400">Analyzing your code with Google Gemini AI...</code>
+              <div className="mt-2 text-yellow-400">✨ Step-by-step hints provided instead of direct answers</div>
+              <div className="mt-2 text-blue-400">🔍 Real-time code analysis and suggestions</div>
+              <div className="mt-2 text-purple-400">🎯 Personalized learning approach</div>
             </div>
           </div>
         </div>
       </motion.div>
-   <motion.button
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ delay: 0.4 }}
-           onClick={onBack}
-           className="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transition-colors"
-         >
-           Back to Featues
-         </motion.button>
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        onClick={onBack}
+        className="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transition-colors"
+      >
+        Back to Features
+      </motion.button>
     </div>
   </motion.div>
 );
 
-// Similar modifications for other feature components...
 const CommandCenter = ({ onBack }) => (
   <motion.div
     variants={pageTransitions}
@@ -131,7 +140,7 @@ const CommandCenter = ({ onBack }) => (
       >
         <div className="flex items-center gap-2 mb-4">
           <Terminal className="text-green-400" size={24} />
-          <h2 className="text-2xl text-green-400">Command Center</h2>
+          <h2 className="text-2xl text-green-400">Monaco Editor Integration</h2>
         </div>
         <div className="space-y-4">
           <motion.div 
@@ -140,8 +149,11 @@ const CommandCenter = ({ onBack }) => (
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <p className="text-green-400">$ compile --watch src/</p>
-            <p className="text-gray-400 mt-2">Watching for file changes...</p>
+            <p className="text-green-400">Features:</p>
+            <p className="text-gray-400 mt-2">✓ Syntax highlighting</p>
+            <p className="text-gray-400 mt-2">✓ Code completion</p>
+            <p className="text-gray-400 mt-2">✓ Error diagnostics</p>
+            <p className="text-gray-400 mt-2">✓ Multi-language support</p>
           </motion.div>
         </div>
       </motion.div>
@@ -152,11 +164,12 @@ const CommandCenter = ({ onBack }) => (
         onClick={onBack}
         className="mt-6 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-500 transition-colors"
       >
-        Back to Featues
+        Back to Features
       </motion.button>
     </div>
   </motion.div>
 );
+
 const PerformanceMetrics = ({ onBack }) => (
   <motion.div
     variants={pageTransitions}
@@ -172,7 +185,7 @@ const PerformanceMetrics = ({ onBack }) => (
         transition={{ delay: 0.2 }}
         className="text-3xl font-bold text-white mb-6"
       >
-        Performance Metrics
+        Code Execution Engine
       </motion.h2>
       <motion.div 
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -181,17 +194,12 @@ const PerformanceMetrics = ({ onBack }) => (
         transition={{ delay: 0.3 }}
       >
         <div className="bg-gray-800 p-6 rounded-lg">
-          <h3 className="text-xl text-purple-400 mb-4">Compilation Speed</h3>
+          <h3 className="text-xl text-purple-400 mb-4">Piston API Integration</h3>
           <div className="relative pt-1">
-            <div className="h-2 bg-gray-700 rounded-full">
-              <motion.div 
-                className="h-2 bg-purple-500 rounded-full"
-                initial={{ width: 0 }}
-                animate={{ width: '75%' }}
-                transition={{ duration: 1, delay: 0.5 }}
-              />
-            </div>
-            <p className="mt-2 text-gray-300">75% faster than traditional compilers</p>
+            <p className="text-gray-300 mt-2">✓ Multi-language support</p>
+            <p className="text-gray-300 mt-2">✓ Secure execution environment</p>
+            <p className="text-gray-300 mt-2">✓ Real-time compilation</p>
+            <p className="text-gray-300 mt-2">✓ Isolated runtime sandbox</p>
           </div>
         </div>
       </motion.div>
@@ -202,13 +210,12 @@ const PerformanceMetrics = ({ onBack }) => (
         onClick={onBack}
         className="mt-6 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-500 transition-colors"
       >
-        Back to Featues
+        Back to Features
       </motion.button>
     </div>
   </motion.div>
 );
 
-// Package Management Component
 const PackageManagement = ({ onBack }) => (
   <motion.div
     variants={pageTransitions}
@@ -224,7 +231,7 @@ const PackageManagement = ({ onBack }) => (
         transition={{ delay: 0.2 }}
         className="text-3xl font-bold text-white mb-6"
       >
-        Package Management
+        AI Learning Assistant
       </motion.h2>
       <motion.div 
         className="bg-gray-800 p-6 rounded-lg"
@@ -241,10 +248,16 @@ const PackageManagement = ({ onBack }) => (
           >
             <div className="flex items-center gap-3">
               <Box className="text-orange-400" size={24} />
-              <span className="text-white">Core Utilities</span>
+              <span className="text-white">Google Gemini Integration</span>
             </div>
-            <span className="text-green-400">v2.1.0</span>
+            <span className="text-green-400">Active</span>
           </motion.div>
+          <div className="text-gray-300 mt-4 space-y-2">
+            <p>✓ Progressive hint system</p>
+            <p>✓ Context-aware suggestions</p>
+            <p>✓ Personalized learning path</p>
+            <p>✓ Debugging assistance</p>
+          </div>
         </div>
       </motion.div>
       <motion.button
@@ -254,11 +267,13 @@ const PackageManagement = ({ onBack }) => (
         onClick={onBack}
         className="mt-6 px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-500 transition-colors"
       >
-        Back to Terminal
+        Back to Features
       </motion.button>
     </div>
   </motion.div>
 );
+
+
 
 
 
@@ -319,7 +334,7 @@ const LandingPage = () => {
     mass: 0.5
   });
   useEffect(() => {
-    if (!hasLaunched) {
+    if (!hasLaunched && activeFeature === null) {
       const unsubscribe = smoothScroll.onChange(value => {
         if (value < 0.3) setStage('terminal');
         else if (value < 0.6) setStage('features');
@@ -327,10 +342,33 @@ const LandingPage = () => {
       });
       return () => unsubscribe();
     }
-  }, [scrollYProgress, hasLaunched]);
-  const terminalOpacity = useTransform(smoothScroll, [0, 0.3], [1, 0]);
-  const featuresOpacity = useTransform(smoothScroll, [0.2, 0.6], [0, 1]);
-  const teamOpacity = useTransform(smoothScroll, [0.5, 1], [0, 1]);
+  }, [scrollYProgress, hasLaunched, activeFeature]);
+  const terminalOpacity = useTransform(
+    smoothScroll, 
+    [0, 0.3], 
+    activeFeature !== null ? [0, 0] : [1, 0]
+  );
+  
+  const featuresOpacity = useTransform(
+    smoothScroll, 
+    [0.2, 0.6], 
+    activeFeature !== null ? [1, 1] : [0, 1]
+  );
+  
+  const teamOpacity = useTransform(
+    smoothScroll, 
+    [0.5, 1], 
+    activeFeature !== null ? [0, 0] : [0, 1]
+  );
+  const handleFeatureBack = () => {
+    setStage('features');
+    setActiveFeature(null);
+    // Reset scroll position when going back to features
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
 
   useEffect(() => {
     // Show button after last message
@@ -344,7 +382,8 @@ const LandingPage = () => {
   const FeatureComponent = activeFeature !== null ? features[activeFeature].component : null;
 
   const terminalLines = [
-    "$ curl example.com",
+    "$Hi there! Welcome to our website",
+    "> Initializing website...",
     "> Connecting to server...",
     "> Fetching content...",
     "> Loading resources...",
@@ -449,23 +488,20 @@ const handleOpenWebsite = () => {
 
       
 {(hasLaunched || stage === 'features') && FeatureComponent && (
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    exit={{ opacity: 0 }}
-    className="absolute inset-0 flex flex-col bg-gray-900 p-20 mt-20"
-    style={{ transform: 'scale(0.85)', transformOrigin: 'top center' }}
-  >
-    <div className="flex-1 overflow-y-auto">
-      <div className="min-h-[800px] w-full max-w-4xl mx-auto p-6 scale-80">
-        <FeatureComponent onBack={() => {
-          setStage('features');
-          setActiveFeature(null);
-        }} />
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="absolute inset-0 flex flex-col bg-gray-900 p-20 mt-20"
+      style={{ transform: 'scale(0.85)', transformOrigin: 'top center' }}
+    >
+      <div className="flex-1 overflow-y-auto">
+        <div className="min-h-[800px] w-full max-w-4xl mx-auto p-6 scale-80">
+          <FeatureComponent onBack={handleFeatureBack} />
+        </div>
       </div>
-    </div>
-  </motion.div>
-)}
+    </motion.div>
+  )}
 {stage === 'team' && (
   <motion.div
   style={{ opacity: teamOpacity }}
@@ -483,7 +519,7 @@ const handleOpenWebsite = () => {
       >
         Meet Our Team
       </motion.h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {teamMembers.map((member, i) => (
           <motion.div
             key={i}
@@ -495,7 +531,7 @@ const handleOpenWebsite = () => {
           >
             <div className="w-20 h-20 rounded-full bg-gray-700 mb-4 overflow-hidden flex items-center justify-center">
               <img 
-                src="/api/placeholder/80/80" 
+                src={member.url}
                 alt={member.name} 
                 className="w-full h-full object-cover"
               />
