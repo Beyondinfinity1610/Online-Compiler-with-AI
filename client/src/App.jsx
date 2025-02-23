@@ -15,6 +15,7 @@ import AIbox from "./Components/AIbox";
 import AIPrompt from "./Components/AIPrompt";
 import { LoginPage } from "./Components/LoginPage";
 import { CodeListModal } from "./Components/CodeListModal";
+import LandingPage from "./Components/LandingPage"
 
 function PrivateRoute({ children }) {
   const token = localStorage.getItem("token");
@@ -229,6 +230,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/" element={<LandingPage/>} />  {/* Home Page */}
         <Route
           path="/editor"
           element={

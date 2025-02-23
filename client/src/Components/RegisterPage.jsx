@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -60,7 +61,17 @@ export function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black">
+    <motion.div
+      className="min-h-screen flex items-center justify-center bg-black w-full h-screen"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 1, ease: "easeOut" }}
+      }
+      exit={{ opacity: 0, x: -100 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="bg-[#161e18] p-8 rounded-lg shadow-md w-96 border border-[#ECDFCC] text-[#ECDFCC]">
         <h2 className="text-2xl font-bold mb-6 text-center text-[#ECDFCC]">
           Create Account
@@ -137,7 +148,11 @@ export function RegisterPage() {
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#ECDFCC] hover:text-[#C4DAD2]"
               >
-                {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showConfirmPassword ? (
+                  <EyeOff size={20} />
+                ) : (
+                  <Eye size={20} />
+                )}
               </button>
             </div>
           </div>
@@ -155,6 +170,8 @@ export function RegisterPage() {
           </p>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
+
+export default RegisterPage;
