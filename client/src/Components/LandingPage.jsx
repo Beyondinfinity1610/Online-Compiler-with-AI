@@ -311,7 +311,7 @@ const LandingPage = () => {
   const laptopY = useTransform(
     scrollYProgress,
     [0, 0.2],
-    hasLaunched ? ['0%', '-2%'] : ['0%', '-10%']
+    hasLaunched ? ['0%', '0%'] : ['0%', '0%']
   );
   const smoothScroll = useSpring(scrollYProgress, {
     stiffness: 100,
